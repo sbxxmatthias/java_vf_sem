@@ -23,6 +23,9 @@ public class Rechteck extends Figur {
 		System.out.println("Ich bin ein Rechteck");
 	}
 	
+	/**
+	 * This method calculates the area of the figure
+	 */
 	public double flaeche() {
 		return this.breite * this.laenge;
 	}
@@ -46,40 +49,7 @@ public class Rechteck extends Figur {
 		return this.breite + " " + this.laenge;
 	}
 	
-	public static void main(String[] args) {
-		Rechteck r1 = new Rechteck();
-		Rechteck r2 = new Rechteck(3,5);
-		
-		Quader q1 = new Quader(2.0, 3.0, 4.0);
-		// toString() wird hier automatisch aufgerufen
-		System.out.println(r1.flaeche());
-		System.out.println(q1.flaeche());
-		// String-Repräsentation
-//		System.out.println(r2.toString());
-//		String r1String = r1.toString();
 
-		// Polymorphie
-		ausgabe(r1);
-		ausgabe(q1); 	
-		
-		Kreis kreis1 = new Kreis(7.0);
-		Kugel kugel2 = new Kugel(4.3);
-		
-		ArrayList<Figur> liste = new ArrayList<>();
-		liste.add(kreis1);
-		liste.add(q1);
-		liste.add(kugel2);
-		liste.add(r1);
-		
-		for(Figur f : liste) {
-			// Zur Laufzeit wird bestimmt, welche Methode
-			// flaeche aufgerufen wird. Dies ist abhängig
-			// von dem Typen des Objektes. 
-			System.out.println(f.flaeche());
-		}
-		
-	}
-	
 	// als Eingabe wird alles akzeptiert, was ein Rechteck und davon abgeleitet ist.
 	public static void ausgabe(Rechteck form) {
 		form.status(); // Hier sucht sich das System die korrekte Methode aus
